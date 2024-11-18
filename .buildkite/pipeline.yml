@@ -2,7 +2,7 @@ steps:
   - command: echo 'Tests'
     label: ':hammer:'
   - wait
-  - trigger: dependent-pipeline-example-deploy
+  - trigger: pipeline-deploy
     label: ":rocket:"
     branches: "master"
     async: true
