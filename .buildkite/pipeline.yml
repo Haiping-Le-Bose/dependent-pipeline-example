@@ -9,5 +9,5 @@ steps:
     build:
       commit: "$BUILDKITE_COMMIT"
       branch: "$BUILDKITE_BRANCH"
-      meta_data:
+      env:
         release-version: "1.1"
