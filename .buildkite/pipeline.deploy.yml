@@ -1,7 +1,8 @@
 steps:
   - command: 
     - echo 'Deploy'
-    - echo " release-version = $(buildkite-agent meta-data get 'release-version')"
+    - release-version = buildkite-agent meta-data get 'release-version'
+    - echo ${release-version}
     label: ":rocket:"
     concurrency_group: "$BUILDKITE_PIPELINE_SLUG-deploy"
     concurrency: 1
