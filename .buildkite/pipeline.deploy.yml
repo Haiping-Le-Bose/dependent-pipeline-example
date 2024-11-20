@@ -3,7 +3,7 @@ steps:
     - echo 'Deploy'
     - echo %BUILDKITE_BUILD_NUMBER%
     - echo %RELEASE_VERSION%
-    if: build.source == 'trigger_job' && build.branch == 'main' && build.env('BUILDKITE_TRIGGERED_FROM_BUILD_ID') == '01934a01-989d-46a8-b648-291f23a711b9'
+    if: build.source == 'trigger_job' && build.branch == 'main' && build.env('BUILDKITE_TRIGGERED_FROM_BUILD_PIPELINE_SLUG') == 'dummy-build-pipeline'
     label: ":rocket:"
     concurrency_group: "$BUILDKITE_PIPELINE_SLUG-deploy"
     concurrency: 1
