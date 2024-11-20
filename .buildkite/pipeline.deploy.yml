@@ -1,6 +1,7 @@
 steps:
   - command: 
     - echo 'Deploy'
+    - echo $Env:BUILDKITE_BUILD_NUMBER
     - echo $Env:RELEASE_VERSION
     label: ":rocket:"
     concurrency_group: "$BUILDKITE_PIPELINE_SLUG-deploy"
