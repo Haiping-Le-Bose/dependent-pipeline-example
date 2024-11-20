@@ -1,5 +1,7 @@
 steps:
-  - command: echo 'Tests'
+  - command:
+    - echo 'Tests'
+    - buildkite-agent meta-data set "release-version" "1.1"
     label: ':hammer:'
   - wait
   - trigger: dummy-deploy
