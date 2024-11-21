@@ -7,7 +7,7 @@ steps:
     if: build.source == 'trigger_job' && build.branch == 'main' && build.env('BUILDKITE_TRIGGERED_FROM_BUILD_PIPELINE_SLUG') == 'dummy-build-pipeline'
     label: ":rocket:"
 
-  - input: "Please input the name the faltbuild, e.g., 8295_FlatBuild_49-20241115.tgz"
+  - input: "Please input the faltbuild name, e.g., 8295_FlatBuild_49-20241115.tgz"
     if: build.source == 'ui' && build.branch == 'main'
     fields:
       - text: "Flatbuild Name"
