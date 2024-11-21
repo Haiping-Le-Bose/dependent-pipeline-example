@@ -15,4 +15,5 @@ steps:
         key: "flatbuild_name"
 
   - label: "Run script"
+    if: build.source == 'ui' && build.branch == 'main'
     command: script.cmd
