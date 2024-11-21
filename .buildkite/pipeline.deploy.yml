@@ -3,7 +3,7 @@ steps:
       - echo 'Deploy'
       - echo %FLATBUILD_NAME%
       - D:\8295_deployment\env-setup.cmd
-      - buildkite-agent meta-data set FLATBUILD_NAME %FLATBUILD_NAME%
+      # - buildkite-agent meta-data set FLATBUILD_NAME %FLATBUILD_NAME%
       - D:\8295_deployment\deploy.cmd
     if: build.source == 'trigger_job' && build.branch == 'main' && build.env('BUILDKITE_TRIGGERED_FROM_BUILD_PIPELINE_SLUG') == 'dummy-build-pipeline'
     label: ":rocket:"
