@@ -10,4 +10,4 @@ steps:
       commit: "$BUILDKITE_COMMIT"
       branch: "$BUILDKITE_BRANCH"
       env:
-        RELEASE_VERSION: "1.1"
+        FLATBUILD_NAME: "8295_FlatBuild_49-20241115.tgz"
