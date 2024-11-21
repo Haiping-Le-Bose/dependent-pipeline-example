@@ -1,8 +1,7 @@
 steps:
   - command:
       - echo 'Deploy'
-      - echo %BUILDKITE_BUILD_NUMBER%
-      - echo %RELEASE_VERSION%
+      - echo %FLATBUILD_NAME%
     if: build.source == 'trigger_job' && build.branch == 'main' && build.env('BUILDKITE_TRIGGERED_FROM_BUILD_PIPELINE_SLUG') == 'dummy-build-pipeline'
     label: ":rocket:"
     concurrency_group: "$BUILDKITE_PIPELINE_SLUG-deploy"
