@@ -1,17 +1,18 @@
 steps:
-  - command: 
-    - echo 'Deploy'
-    - echo %BUILDKITE_BUILD_NUMBER%
-    - echo %RELEASE_VERSION%
+  - command:
+      - echo 'Deploy'
+      - echo %BUILDKITE_BUILD_NUMBER%
+      - echo %RELEASE_VERSION%
     if: build.source == 'trigger_job' && build.branch == 'main' && build.env('BUILDKITE_TRIGGERED_FROM_BUILD_PIPELINE_SLUG') == 'dummy-build-pipeline'
     label: ":rocket:"
     concurrency_group: "$BUILDKITE_PIPELINE_SLUG-deploy"
     concurrency: 1
 
- - input: "Which flatbuild do you need?  Please provide the name, e.g., 8295_FlatBuild_49-20241115.tgz"
-   if: build.source == 'ui' && build.branch == 'main'
-   fields:
-    - text: "Flatbuild Name"
-      key: "flatbuild_name"
+  - input: "Which flatbuild do you need?  Please provide the name, e.g., 8295_FlatBuild_49-20241115.tgz"
+    if: build.source == 'ui' && build.branch == 'main'
+    fields:
+      - text: "Flatbuild Name"
+        key: "flatbuild_name"
+
   - label: "Run script"
     command: script.cmd
