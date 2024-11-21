@@ -3,6 +3,7 @@ steps:
     label: ':hammer:'
   - wait
   - trigger: dummy-deploy
+    parallelism: 2
     label: ":rocket:"
     branches: "main"
     async: false
