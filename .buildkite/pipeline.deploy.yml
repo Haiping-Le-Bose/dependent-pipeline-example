@@ -16,4 +16,6 @@ steps:
   - wait
   - label: "Run script"
     if: build.source == 'ui' && build.branch == 'main'
-    command: D:\8295_deployment\deploy.cmd
+    command: 
+      - D:\8295_deployment\deploy.cmd
+      - echo 'OK'
